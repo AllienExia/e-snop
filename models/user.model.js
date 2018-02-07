@@ -28,6 +28,10 @@ userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true
+    },
+    param: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Params'
     }
 },{ timestamps: true });
 

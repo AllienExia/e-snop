@@ -24,12 +24,13 @@ function addMeeting(params) {
       operations.forEach(element => {
         let newOperation = {} 
         newOperation.name = element
-        newOperation.capa = []
-        newOperation.capaMax = []
-        newOperation.forecasts = []
-        newOperation.done = []
-        newOperation.stock = []
+        //newOperation.capa = []
+        //newOperation.capaMax = []
+        //newOperation.forecasts = []
+        //newOperation.done = []
+        //newOperation.stock = []
         newOperation.data = []
+        newOperation.notes = []
 
         for (var i = 0; i < params.params.nextMonth; i++) {
           let tempDate = new Date(y, m+i+1, 1)
@@ -37,7 +38,9 @@ function addMeeting(params) {
           let month = new Date(y, m+i, 1).toLocaleString('fr-fr', {year: 'numeric', month: "numeric" })
           console.log(new Date(y, m+i, 2))
           let workingDay = workingDaysBetweenDates(new Date(y, m+i, 2), tempDate)
-          newOperation.data.push({month: month, workingDay: workingDay, teamNbHour: 8, teamNb: 1, capa: (workingDay * 8), workingDayMax: workingDay, teamNbHourMax: 8, teamNbMax: 1, capaMax: (workingDay * 8)})
+          let forecast =  Math.floor(Math.random() * (200 - 100 + 1)) + 100;
+          let real =  Math.floor(Math.random() * (200 - 100 + 1)) + 100;
+          newOperation.data.push({month: month, workingDay: workingDay, teamNbHour: 8, teamNb: 1, capa: (workingDay * 8), workingDayMax: workingDay, teamNbHourMax: 8, teamNbMax: 3, capaMax: (workingDay * 24), forecast: forecast, real: real})
           //newOperation.capaMax.push({month: month, workingDay: workingDay, teamNbHour: 8, teamNb: 1, capa: (workingDay * 8)})
         }
         newMeeting.meetingData.push(newOperation)

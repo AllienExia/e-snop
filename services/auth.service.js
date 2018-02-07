@@ -11,7 +11,7 @@ function createToken(user, secret) {
 }
 function checkAdmin(params) {
     return new Promise(function(resolve, reject) {
-      Admin.findOne({"login": params.login, "password": params.password}).populate('param').lean()
+        User.findOne({"login": params.login, "password": params.password}).populate('param').lean()
       .exec(function (err, admin) {
           if (err) reject(err);
           else resolve(admin);
