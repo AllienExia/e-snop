@@ -1,11 +1,11 @@
 {
   "development": {
-    "port": 8888,
+    "port": 8808,
     "secret": "agileaqotdproject",
     "database": "mongodb://localhost:27017/esnop"
   },
   "production": {
-    "port": 8888,
+    "port": 8808,
     "secret": "agileaqotdproject",
     "database": "mongodb://localhost:27017/esnop"
   }
