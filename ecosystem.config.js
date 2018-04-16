@@ -24,7 +24,7 @@ module.exports = {
    */
   deploy : {
     production : {
-      user : 'node',
+      user : 'admin',
       host : '51.38.34.4',
       ref  : 'origin/master',
       repo : 'https://github.com/AllienExia/e-snop.git',
