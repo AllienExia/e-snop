@@ -32,7 +32,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'https://github.com/AllienExia/e-snop.git',
       path : '/var/www/snop-demo1',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
+      'post-deploy' : 'npm install'
     },
     dev : {
       user : 'node',
